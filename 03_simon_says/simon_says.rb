@@ -7,7 +7,7 @@ def shout(string)
 end
 
 def repeat(string, repeat = 2)
-  Array.new(repeat, string).join(" ")
+  ((string + " ") * repeat).strip
 end
 
 def start_of_word(word, n)
@@ -19,8 +19,8 @@ def first_word(string)
 end
  
 def titleize(string)
-  small_words = %w[and over the]
-  title_array = string.split.each.map do |word|
+  small_words = %w[and over the] #only the words needed to pass the spec
+  title_array = string.split.map do |word|
     if small_words.include?(word)
       word
     else
