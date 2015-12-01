@@ -37,8 +37,7 @@ class RPNCalculator < Array
   end
   
   def evaluate(string)
-    string_tokens = tokens(string)
-    string_tokens.each do |token|
+    tokens(string).each do |token|
       if token.is_a?(Fixnum)
         self.push(token)
       elsif token.is_a?(Symbol)
